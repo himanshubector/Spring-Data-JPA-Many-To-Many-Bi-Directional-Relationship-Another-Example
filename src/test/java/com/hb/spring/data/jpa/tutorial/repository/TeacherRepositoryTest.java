@@ -45,7 +45,6 @@ class TeacherRepositoryTest
         teacherRepository.save(teacher);
     }
 
-
 }
 
 

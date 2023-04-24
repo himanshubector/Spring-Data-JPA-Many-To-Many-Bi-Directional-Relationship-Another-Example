@@ -42,4 +42,12 @@ public class Course
                                             // Thus, we are defining here One To One Bi-Directional Mapping
 
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(
+            name = "teacher_id",
+            referencedColumnName = "teacherId"
+    )
+    private Teacher teacher;
+
+
 }

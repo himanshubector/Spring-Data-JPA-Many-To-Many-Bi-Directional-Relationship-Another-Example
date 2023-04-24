@@ -33,12 +33,13 @@ public class Teacher
     private String lastName;
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(
-            name = "teacher_id",
-            referencedColumnName = "teacherId"
-    )
-    private List<Course> courses;
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(
+//            name = "teacher_id",
+//            referencedColumnName = "teacherId"
+//    )
+//    private List<Course> courses;
+
 
     // Uni-directional One to Many mapping -> One Teacher can teach Many Courses
     // Here, extra column 'teacher_id' will be created on the many side of the relationship i.e. in the Course table
