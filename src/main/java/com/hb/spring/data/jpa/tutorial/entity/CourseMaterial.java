@@ -45,4 +45,5 @@ public class CourseMaterial
     // With FetchType.EAGER, it will fetch the details of the Child along with the Parent i.e.
     // both Course and CourseMaterial details
 
+
 }
