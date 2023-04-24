@@ -1,5 +1,5 @@
 
-Error Details :
+1. Error Details :
 
 org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException:
 object references an unsaved transient instance - save the transient instance before flushing :
@@ -28,7 +28,7 @@ Fix for this issue ------>>   @OneToOne(cascade = CascadeType.ALL)
 
 
 
-Error Details :
+2. Error Details :
 
 org.hibernate.LazyInitializationException:
 could not initialize proxy [com.hb.spring.data.jpa.tutorial.entity.Course#1] - no Session
@@ -44,7 +44,7 @@ With fetch = FetchType.LAZY, use @ToString(exclude = "course") at the entity Cla
 
 
 
-Error Details :
+3. Error Details :
 
 org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value :
 com.hb.spring.data.jpa.tutorial.entity.CourseMaterial.course; nested exception is org.hibernate.PropertyValueException:
@@ -61,7 +61,7 @@ Because 'course' is a required field now, we can't save the CourseMaterial witho
 
 
 
-Error Details :
+4. Error Details :
 
 org.springframework.dao.InvalidDataAccessApiUsageException: detached entity passed to persist:
 com.hb.spring.data.jpa.tutorial.entity.Teacher; nested exception is org.hibernate.PersistentObjectException:
