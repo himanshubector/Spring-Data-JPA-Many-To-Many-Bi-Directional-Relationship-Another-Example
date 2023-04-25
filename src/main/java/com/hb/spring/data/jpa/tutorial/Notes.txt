@@ -75,3 +75,67 @@ https://stackoverflow.com/questions/23645091/spring-data-jpa-and-hibernate-detac
 
 
 
+
+5. Error Details :
+
+
+Category category = categoryRepository.findById("cid1").get();
+        log.info("Category Products size : {}", category.getProducts().size());
+
+
+Getting this below error while invoking size() -
+
+org.hibernate.LazyInitializationException:
+failed to lazily initialize a collection of role: com.hb.spring.data.jpa.tutorial.entity.Category.products,
+could not initialize proxy - no Session
+
+
+
+Fix for this issue ------>>
+
+This error occurs because you are trying to access a lazily loaded collection outside the context of an open Hibernate session.
+
+
+In your code snippet, it seems like you are using Spring Data JPA to access the database.
+When you fetch an entity using findById method, the entity and its associated collections are loaded lazily. This means that the data is only loaded from the database when it is actually needed, not when the entity is first fetched.
+
+
+In your case, you are trying to access the size of the products collection outside of the Hibernate session.
+When you call category.getProducts().size(), Hibernate tries to initialize the products collection, but it fails because the Hibernate session is already closed.
+
+
+
+To solve this problem, you can either:
+
+a. Eagerly load the products collection along with the Category entity by using the fetch keyword in your repository method. For example:
+
+
+@Query("SELECT c FROM Category c LEFT JOIN FETCH c.products WHERE c.id = :categoryId")
+Category findByIdWithProducts(@Param("categoryId") String categoryId);
+
+
+This will fetch the Category entity and its associated products collection in a single query, so you can access the products collection outside of the Hibernate session without any issues.
+
+
+
+
+b. Open a Hibernate session before accessing the products collection. This can be done by wrapping your code with a transaction. For example:
+
+
+@Transactional
+public void someMethod() {
+    Category category = categoryRepository.findById("cid1").get();
+    log.info("Category Products size : {}", category.getProducts().size());
+}
+
+
+
+This will open a Hibernate session when the someMethod method is called,
+and it will keep the session open until the method completes.
+This way, you can access the products collection outside of the Hibernate session without any issues.
+
+
+
+@Transactional is an annotation that belongs to the org.springframework.transaction.annotation package in Spring Framework.
+
+
