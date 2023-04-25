@@ -15,7 +15,6 @@ import java.util.List;
 @Builder
 public class Teacher
 {
-
     @Id
     @SequenceGenerator(
             name = "teacher_sequence",

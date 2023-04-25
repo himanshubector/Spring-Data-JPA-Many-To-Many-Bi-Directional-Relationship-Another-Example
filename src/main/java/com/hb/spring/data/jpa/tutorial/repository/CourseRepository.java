@@ -14,4 +14,5 @@ import java.util.List;
 public interface CourseRepository extends JpaRepository<Course,Long>
 {
     Page<Course> findByTitleContaining(String title, Pageable pageable);  // Custom method for Sorting
+
 }
