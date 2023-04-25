@@ -139,3 +139,121 @@ This way, you can access the products collection outside of the Hibernate sessio
 @Transactional is an annotation that belongs to the org.springframework.transaction.annotation package in Spring Framework.
 
 
+
+###################################################################################################
+
+
+
+Spring Data JPA Tutorial
+
+
+https://www.youtube.com/watch?v=sdDDuQuX2cg&list=PL0zysOflRCekYnhLjQGwpdJYzr38QXdhl&index=2&t=1s
+
+
+
+https://www.youtube.com/watch?v=XszpXoII9Sg&list=PLGkw5PiN7Vh-GnufEt5H1_g9Hm17_Fhi0&index=6&t=1s
+
+
+
+
+What is Spring Data JPA?
+
+
+
+Why we use it?
+
+
+
+Connecting SpringBoot App with DB
+
+
+
+Mapping Entities with DB (How to map Java class/object to the Database table)
+
+
+
+Different JPA Annotations
+
+
+
+Understanding Repositories and their methods
+
+
+
+@Embeddable and @Embedded , @AttributeOverrides and @AttributeOverride
+
+
+
+Creating JPA Repositories & Custom Finder methods (Creating custom methods in Repository classes)
+
+Eg. fetching the Students record based on the name of the Student
+
+
+
+
+@Query Annotation
+
+
+
+Native Queries Example
+
+
+
+Query Named Params
+
+
+
+@Transactional and @Modifying Annotation
+
+
+
+
+Spring ORM ->
+
+a. JPA One-To-One Relationship
+
+Eg. - User and Cart relationship, User and Address relationship, Student and Laptop relationship
+
+
+
+
+Cascade Types
+
+
+Fetch Types
+
+
+Uni & Bi-directional relationship
+
+
+
+
+
+b. JPA One-To-Many Relationship
+
+
+
+
+c. JPA Many-To-One Relationship
+
+
+
+
+Paging and Sorting in Spring Data JPA (PagingAndSortingRepository)
+
+Implementing findAll() method based on sorting and based on pagination
+
+Using default methods from PagingAndSortingRepository and creating custom methods as well
+
+
+Iterable<T> findAll(Sort sort);
+
+Page<T> findAll(Pageable pageable);
+
+
+
+
+
+d. JPA Many-To-Many Relationship
+
+
